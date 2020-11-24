@@ -1,0 +1,25 @@
+name: CFX Default
+version: 1.0.0
+author: Tabarra
+description: |-
+    Recipe for the base resources required to run a server.
+
+tasks: 
+    - action: download_file
+      url: https://github.com/citizenfx/cfx-server-data/archive/ab4eccec832559607271092642ecbdde8f9f5157.zip
+      path: ./tmp/cfx-server-data.zip
+
+    - action: unzip
+      src: ./tmp/cfx-server-data.zip
+      dest: ./tmp
+
+    - action: move_path
+      src: ./tmp/cfx-server-data-ab4eccec832559607271092642ecbdde8f9f5157/resources
+      dest: ./resources
+
+    - action: download_file
+      url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/cfx_default/server.cfg
+      path: ./server.cfg
+
+    - action: remove_path
+      path: ./tmp
