@@ -1,0 +1,153 @@
+name: PlumeESXv1
+version: v1.0.0-rc1
+author: Tabarra
+description: A full featured and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
+
+variables:
+  dbHost: localhost
+  dbUsername: root
+  dbPassword: ""
+  # dbName: dep_keep
+  # dbOverwrite: yes_delete_existing_database
+
+tasks:
+  # Prepare database
+  - action: download_file
+    url: https://gist.githubusercontent.com/tabarra/13dc11a594f2e5e0e94d32b08836566c/raw/634586fb9d997a5c824c35dc13d0585d35aae070/esx1v2.sql
+    path: ./esx1v2.sql
+    
+  - action: connect_database
+  # - action: query_database
+  #   query: |
+  #     DROP DATABASE `dep_keep`;
+  #     CREATE DATABASE `dep_keep` /*!40100 COLLATE 'utf8_general_ci' */;
+  #     USE `dep_keep`;
+  - action: query_database
+    file: ./esx1v2.sql
+
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: 6eaa3525a6858a83546dc9c4ce621e59eae7085c
+    subpath: resources
+    dest: ./resources
+
+  # Download basic resources and ESX dependencies
+  - action: download_github
+    src: https://github.com/Blumlaut/EasyAdmin
+    dest: ./resources/EasyAdmin
+
+  - action: download_github
+    src: https://github.com/esx-framework/async
+    dest: ./resources/async
+
+  - action: download_github
+    src: https://github.com/brouznouf/fivem-mysql-async
+    dest: ./resources/mysql-async
+
+  - action: download_github
+    src: https://github.com/esx-framework/cron
+    dest: ./resources/cron
+
+  - action: download_github
+    src: https://github.com/esx-framework/skinchanger
+    dest: ./resources/skinchanger
+
+  # Download ESX resources
+  - action: download_github
+    src: https://github.com/esx-framework/es_extended
+    ref: legacy
+    dest: ./resources/[esx]/es_extended
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_menu_default
+    dest: ./resources/[esx]/esx_menu_default
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_menu_dialog
+    dest: ./resources/[esx]/esx_menu_dialog
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_menu_list
+    dest: ./resources/[esx]/esx_menu_list
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_datastore
+    dest: ./resources/[esx]/esx_datastore
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_identity
+    dest: ./resources/[esx]/esx_identity
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_skin
+    dest: ./resources/[esx]/esx_skin
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_status
+    dest: ./resources/[esx]/esx_status
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_basicneeds
+    dest: ./resources/[esx]/esx_basicneeds
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_billing
+    dest: ./resources/[esx]/esx_billing
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addoninventory
+    dest: ./resources/[esx]/esx_addoninventory
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addonaccount
+    dest: ./resources/[esx]/esx_addonaccount
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_society
+    dest: ./resources/[esx]/esx_society
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_license
+    dest: ./resources/[esx]/esx_license
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_service
+    dest: ./resources/[esx]/esx_service
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_garage
+    dest: ./resources/[esx]/esx_garage
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_policejob
+    dest: ./resources/[esx]/esx_policejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_vehicleshop
+    dest: ./resources/[esx]/esx_vehicleshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_shops
+    dest: ./resources/[esx]/esx_shops
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_weaponshop
+    dest: ./resources/[esx]/esx_weaponshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_clotheshop
+    dest: ./resources/[esx]/esx_clotheshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_barbershop
+    dest: ./resources/[esx]/esx_barbershop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_lscustom
+    dest: ./resources/[esx]/esx_lscustom
+
+  # Download and prepare server.cfg
+  - action: download_file
+    url: https://gist.githubusercontent.com/tabarra/b585c7aaed1ed93a704ff160e8ad2bef/raw/95a13997968775edbd1d360a6c4030de033d5c19/server.cfg
+    path: ./server.cfg
