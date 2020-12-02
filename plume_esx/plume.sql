@@ -23,8 +23,12 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
 -- Dumping data for table dep_keep.addon_account: ~2 rows (approximately)
 /*!40000 ALTER TABLE `addon_account` DISABLE KEYS */;
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
-	('society_cardealer', 'Concessionnaire', 1),
-	('society_police', 'Police', 1);
+	('caution', 'caution', 0),
+	('society_ambulance', 'EMS', 1),
+	('society_cardealer', 'Cardealer', 1),
+	('society_mechanic', 'Mechanic', 1),
+	('society_police', 'Police', 1),
+	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.addon_account_data
@@ -36,13 +40,16 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table dep_keep.addon_account_data: ~2 rows (approximately)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 0, NULL),
-	(2, 'society_police', 0, NULL);
+	(2, 'society_police', 0, NULL),
+	(3, 'society_ambulance', 0, NULL),
+	(4, 'society_mechanic', 0, NULL),
+	(5, 'society_taxi', 0, NULL);
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.addon_inventory
@@ -56,8 +63,11 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
 -- Dumping data for table dep_keep.addon_inventory: ~2 rows (approximately)
 /*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
 INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
-	('society_cardealer', 'Concesionnaire', 1),
-	('society_police', 'Police', 1);
+	('society_ambulance', 'EMS', 1),
+	('society_cardealer', 'Cardealer', 1),
+	('society_mechanic', 'Mechanic', 1),
+	('society_police', 'Police', 1),
+	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.addon_inventory_items
@@ -116,7 +126,10 @@ CREATE TABLE IF NOT EXISTS `datastore` (
 -- Dumping data for table dep_keep.datastore: ~0 rows (approximately)
 /*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
 INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
-	('society_police', 'Police', 1);
+	('society_ambulance', 'EMS', 1),
+	('society_mechanic', 'Mechanic', 1),
+	('society_police', 'Police', 1),
+	('society_taxi', 'Taxi', 1);
 /*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.datastore_data
@@ -128,12 +141,15 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table dep_keep.datastore_data: ~0 rows (approximately)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
-	(1, 'society_police', NULL, '{}');
+	(1, 'society_police', NULL, '{}'),
+	(2, 'society_ambulance', NULL, '{}'),
+	(3, 'society_mechanic', NULL, '{}'),
+	(4, 'society_taxi', NULL, '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.items
@@ -149,23 +165,63 @@ CREATE TABLE IF NOT EXISTS `items` (
 -- Dumping data for table dep_keep.items: ~2 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
-	('bread', 'Pain', 1, 0, 1),
-	('water', 'Eau', 1, 0, 1);
+	('alive_chicken', 'Living chicken', 1, 0, 1),
+	('bandage', 'Bandage', 2, 0, 1),
+	('blowpipe', 'Blowtorch', 2, 0, 1),
+	('bread', 'Bread', 1, 0, 1),
+	('cannabis', 'Cannabis', 3, 0, 1),
+	('carokit', 'Body Kit', 3, 0, 1),
+	('carotool', 'Tools', 2, 0, 1),
+	('clothe', 'Cloth', 1, 0, 1),
+	('copper', 'Copper', 1, 0, 1),
+	('cutted_wood', 'Cut wood', 1, 0, 1),
+	('diamond', 'Diamond', 1, 0, 1),
+	('essence', 'Gas', 1, 0, 1),
+	('fabric', 'Fabric', 1, 0, 1),
+	('fish', 'Fish', 1, 0, 1),
+	('fixkit', 'Repair Kit', 3, 0, 1),
+	('fixtool', 'Repair Tools', 2, 0, 1),
+	('gazbottle', 'Gas Bottle', 2, 0, 1),
+	('gold', 'Gold', 1, 0, 1),
+	('iron', 'Iron', 1, 0, 1),
+	('marijuana', 'Marijuana', 2, 0, 1),
+	('medikit', 'Medikit', 2, 0, 1),
+	('packaged_chicken', 'Chicken fillet', 1, 0, 1),
+	('packaged_plank', 'Packaged wood', 1, 0, 1),
+	('petrol', 'Oil', 1, 0, 1),
+	('petrol_raffin', 'Processed oil', 1, 0, 1),
+	('slaughtered_chicken', 'Slaughtered chicken', 1, 0, 1),
+	('stone', 'Stone', 1, 0, 1),
+	('washed_stone', 'Washed stone', 1, 0, 1),
+	('water', 'Water', 1, 0, 1),
+	('wood', 'Wood', 1, 0, 1),
+	('wool', 'Wool', 1, 0, 1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
+  `whitelisted` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table dep_keep.jobs: ~3 rows (approximately)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT INTO `jobs` (`name`, `label`) VALUES
-	('cardealer', 'Concessionnaire'),
-	('police', 'LSPD'),
-	('unemployed', 'Unemployed');
+INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
+	('ambulance', 'EMS', 0),
+	('cardealer', 'Cardealer', 0),
+	('fisherman', 'Fisherman', 0),
+	('fueler', 'Fueler', 0),
+	('lumberjack', 'Lumberjack', 0),
+	('mechanic', 'Mechanic', 0),
+	('miner', 'Miner', 0),
+	('police', 'LSPD', 0),
+	('reporter', 'Reporter', 0),
+	('slaughterer', 'Butcher', 0),
+	('tailor', 'Tailor', 0),
+	('taxi', 'Taxi', 0),
+	('unemployed', 'Unemployed', 0);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.job_grades
@@ -179,9 +235,9 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext NOT NULL,
   `skin_female` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
--- Dumping data for table dep_keep.job_grades: ~9 rows (approximately)
+-- Dumping data for table dep_keep.job_grades: ~10 rows (approximately)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'unemployed', 0, 'unemployed', 'Unemployed', 200, '{}', '{}'),
@@ -190,10 +246,31 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(4, 'police', 2, 'sergeant', 'Sergent', 60, '{}', '{}'),
 	(5, 'police', 3, 'lieutenant', 'Lieutenant', 85, '{}', '{}'),
 	(6, 'police', 4, 'boss', 'Commandant', 100, '{}', '{}'),
-	(11, 'cardealer', 0, 'recruit', 'Recrue', 10, '{}', '{}'),
+	(11, 'cardealer', 0, 'recruit', 'Recruit', 10, '{}', '{}'),
 	(12, 'cardealer', 1, 'novice', 'Novice', 25, '{}', '{}'),
-	(13, 'cardealer', 2, 'experienced', 'Experimente', 40, '{}', '{}'),
-	(14, 'cardealer', 3, 'boss', 'Patron', 0, '{}', '{}');
+	(13, 'cardealer', 2, 'experienced', 'Experienced', 40, '{}', '{}'),
+	(14, 'cardealer', 3, 'boss', 'Boss', 0, '{}', '{}'),
+	(15, 'lumberjack', 0, 'employee', 'Employee', 0, '{}', '{}'),
+	(16, 'fisherman', 0, 'employee', 'Employee', 0, '{}', '{}'),
+	(17, 'fueler', 0, 'employee', 'Employee', 0, '{}', '{}'),
+	(18, 'reporter', 0, 'employee', 'Employee', 0, '{}', '{}'),
+	(19, 'tailor', 0, 'employee', 'Employee', 0, '{"mask_1":0,"arms":1,"glasses_1":0,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":0,"torso_1":24,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":0,"lipstick_2":0,"chain_1":0,"tshirt_1":0,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":36,"tshirt_2":0,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":48,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}', '{"mask_1":0,"arms":5,"glasses_1":5,"hair_color_2":4,"makeup_1":0,"face":19,"glasses":0,"mask_2":0,"makeup_3":0,"skin":29,"helmet_2":0,"lipstick_4":0,"sex":1,"torso_1":52,"makeup_2":0,"bags_2":0,"chain_2":0,"ears_1":-1,"bags_1":0,"bproof_1":0,"shoes_2":1,"lipstick_2":0,"chain_1":0,"tshirt_1":23,"eyebrows_3":0,"pants_2":0,"beard_4":0,"torso_2":0,"beard_2":6,"ears_2":0,"hair_2":0,"shoes_1":42,"tshirt_2":4,"beard_3":0,"hair_1":2,"hair_color_1":0,"pants_1":36,"helmet_1":-1,"bproof_2":0,"eyebrows_4":0,"eyebrows_2":0,"decals_1":0,"age_2":0,"beard_1":5,"shoes":10,"lipstick_1":0,"eyebrows_1":0,"glasses_2":0,"makeup_4":0,"decals_2":0,"lipstick_3":0,"age_1":0}'),
+	(20, 'miner', 0, 'employee', 'Employee', 0, '{"tshirt_2":1,"ears_1":8,"glasses_1":15,"torso_2":0,"ears_2":2,"glasses_2":3,"shoes_2":1,"pants_1":75,"shoes_1":51,"bags_1":0,"helmet_2":0,"pants_2":7,"torso_1":71,"tshirt_1":59,"arms":2,"bags_2":0,"helmet_1":0}', '{}'),
+	(21, 'slaughterer', 0, 'employee', 'Employee', 0, '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":67,"pants_1":36,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":0,"torso_1":56,"beard_2":6,"shoes_1":12,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":15,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":0,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}', '{"age_1":0,"glasses_2":0,"beard_1":5,"decals_2":0,"beard_4":0,"shoes_2":0,"tshirt_2":0,"lipstick_2":0,"hair_2":0,"arms":72,"pants_1":45,"skin":29,"eyebrows_2":0,"shoes":10,"helmet_1":-1,"lipstick_1":0,"helmet_2":0,"hair_color_1":0,"glasses":0,"makeup_4":0,"makeup_1":0,"hair_1":2,"bproof_1":0,"bags_1":0,"mask_1":0,"lipstick_3":0,"chain_1":0,"eyebrows_4":0,"sex":1,"torso_1":49,"beard_2":6,"shoes_1":24,"decals_1":0,"face":19,"lipstick_4":0,"tshirt_1":9,"mask_2":0,"age_2":0,"eyebrows_3":0,"chain_2":0,"glasses_1":5,"ears_1":-1,"bags_2":0,"ears_2":0,"torso_2":0,"bproof_2":0,"makeup_2":0,"eyebrows_1":0,"makeup_3":0,"pants_2":0,"beard_3":0,"hair_color_2":4}'),
+	(22, 'ambulance', 0, 'ambulance', 'Jr. EMT', 20, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
+	(23, 'ambulance', 1, 'doctor', 'EMT', 40, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
+	(24, 'ambulance', 2, 'chief_doctor', 'Sr. EMT', 60, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
+	(25, 'ambulance', 3, 'boss', 'EMT Supervisor', 80, '{"tshirt_2":0,"hair_color_1":5,"glasses_2":3,"shoes":9,"torso_2":3,"hair_color_2":0,"pants_1":24,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":15,"helmet_1":8,"helmet_2":0,"arms":92,"face":19,"decals_1":60,"torso_1":13,"hair_2":0,"skin":34,"pants_2":5}', '{"tshirt_2":3,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":73,"shoes":1,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":5,"tshirt_1":75,"pants_1":37,"helmet_1":57,"torso_2":0,"arms":14,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
+	(26, 'mechanic', 0, 'recrue', 'Recruit', 12, '{}', '{}'),
+	(27, 'mechanic', 1, 'novice', 'Novice', 24, '{}', '{}'),
+	(28, 'mechanic', 2, 'experimente', 'Experienced', 36, '{}', '{}'),
+	(29, 'mechanic', 3, 'chief', 'Leader', 48, '{}', '{}'),
+	(30, 'mechanic', 4, 'boss', 'Boss', 0, '{}', '{}'),
+	(31, 'taxi', 0, 'recrue', 'Recruit', 12, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(32, 'taxi', 1, 'novice', 'Cabby', 24, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(33, 'taxi', 2, 'experimente', 'Experienced', 36, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(34, 'taxi', 3, 'uber', 'Uber Cabby', 48, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
+	(35, 'taxi', 4, 'boss', 'Lead Cabby', 0, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.licenses
@@ -205,6 +282,8 @@ CREATE TABLE IF NOT EXISTS `licenses` (
 
 -- Dumping data for table dep_keep.licenses: ~0 rows (approximately)
 /*!40000 ALTER TABLE `licenses` DISABLE KEYS */;
+INSERT INTO `licenses` (`type`, `label`) VALUES
+	('weed_processing', 'Weed Processing License');
 /*!40000 ALTER TABLE `licenses` ENABLE KEYS */;
 
 -- Dumping structure for table dep_keep.owned_vehicles
@@ -287,6 +366,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `height` int(11) DEFAULT NULL,
   `skin` longtext DEFAULT NULL,
   `status` longtext DEFAULT NULL,
+  `is_dead` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -581,7 +661,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table dep_keep.vehicle_categories: ~0 rows (approximately)
+-- Dumping data for table dep_keep.vehicle_categories: ~11 rows (approximately)
 /*!40000 ALTER TABLE `vehicle_categories` DISABLE KEYS */;
 INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('compacts', 'Compacts'),
@@ -620,7 +700,7 @@ CREATE TABLE IF NOT EXISTS `weashops` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
--- Dumping data for table dep_keep.weashops: ~0 rows (approximately)
+-- Dumping data for table dep_keep.weashops: ~40 rows (approximately)
 /*!40000 ALTER TABLE `weashops` DISABLE KEYS */;
 INSERT INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 	(1, 'GunShop', 'WEAPON_PISTOL', 300),

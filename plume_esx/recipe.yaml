@@ -1,7 +1,7 @@
 name: PlumeESXv1
 version: v1.0.0-rc1
-author: Tabarra
-description: A full featured and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
+author: Tabarra & Chip
+description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
 
 variables:
   dbHost: localhost
@@ -11,9 +11,14 @@ variables:
   # dbOverwrite: yes_delete_existing_database
 
 tasks:
+  # Download and prepare server.cfg
+  - action: download_file
+    url: https://gist.githubusercontent.com/tabarra/b585c7aaed1ed93a704ff160e8ad2bef/raw/62966e7be199b119bbe35236af59e0887172ed36/server.cfg
+    path: ./server.cfg
+
   # Prepare database
   - action: download_file
-    url: https://gist.githubusercontent.com/tabarra/13dc11a594f2e5e0e94d32b08836566c/raw/634586fb9d997a5c824c35dc13d0585d35aae070/esx1v2.sql
+    url: https://gist.githubusercontent.com/tabarra/13dc11a594f2e5e0e94d32b08836566c/raw/ea5e46e5777a50a15735d3ddacd56efdcb10a1b8/esx1v2.sql
     path: ./esx1v2.sql
     
   - action: connect_database
@@ -52,6 +57,16 @@ tasks:
   - action: download_github
     src: https://github.com/esx-framework/skinchanger
     dest: ./resources/skinchanger
+
+  - action: download_github
+    src: https://github.com/HypeLevels/simpledrift
+    ref: v1.1
+    dest: ./resources/simpledrift
+
+  - action: download_github
+    src: https://github.com/dsheedes/cd_easytime
+    ref: aaff63bf6215c8573aef0adf9deaa5746f3884b6
+    dest: ./resources/cd_easytime
 
   # Download ESX resources
   - action: download_github
@@ -120,12 +135,36 @@ tasks:
     dest: ./resources/[esx]/esx_garage
 
   - action: download_github
+    src: https://github.com/esx-framework/esx_vehicleshop
+    dest: ./resources/[esx]/esx_vehicleshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_jobs
+    dest: ./resources/[esx]/esx_jobs
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_joblisting
+    dest: ./resources/[esx]/esx_joblisting
+
+  - action: download_github
     src: https://github.com/esx-framework/esx_policejob
     dest: ./resources/[esx]/esx_policejob
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_vehicleshop
-    dest: ./resources/[esx]/esx_vehicleshop
+    src: https://github.com/esx-framework/esx_ambulancejob
+    dest: ./resources/[esx]/esx_ambulancejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_mechanicjob
+    dest: ./resources/[esx]/esx_mechanicjob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_taxijob
+    dest: ./resources/[esx]/esx_taxijob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_lscustom
+    dest: ./resources/[esx]/esx_lscustom
 
   - action: download_github
     src: https://github.com/esx-framework/esx_shops
@@ -144,10 +183,11 @@ tasks:
     dest: ./resources/[esx]/esx_barbershop
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_lscustom
-    dest: ./resources/[esx]/esx_lscustom
+    src: https://github.com/esx-framework/esx_drugs
+    dest: ./resources/[esx]/esx_drugs
 
-  # Download and prepare server.cfg
-  - action: download_file
-    url: https://gist.githubusercontent.com/tabarra/b585c7aaed1ed93a704ff160e8ad2bef/raw/95a13997968775edbd1d360a6c4030de033d5c19/server.cfg
-    path: ./server.cfg
+  - action: download_github
+    src: https://github.com/esx-framework/esx_holdup
+    dest: ./resources/[esx]/esx_holdup
+
+
