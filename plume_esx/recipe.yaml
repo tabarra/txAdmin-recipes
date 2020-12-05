@@ -1,32 +1,25 @@
-name: PlumeESXv1
-version: v1.0.0-rc1
+$engine: 2
+name: PlumeESX
+version: v1.0.0-rc2
 author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
-
-variables:
-  dbHost: localhost
-  dbUsername: root
-  dbPassword: ""
-  # dbName: dep_keep
-  # dbOverwrite: yes_delete_existing_database
 
 tasks:
   # Download and prepare server.cfg
   - action: download_file
-    url: https://gist.githubusercontent.com/tabarra/b585c7aaed1ed93a704ff160e8ad2bef/raw/62966e7be199b119bbe35236af59e0887172ed36/server.cfg
+    url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/server.cfg
     path: ./server.cfg
+
+  - action: replace_string
+    file: ./server.cfg
+    mode: all_vars
 
   # Prepare database
   - action: download_file
-    url: https://gist.githubusercontent.com/tabarra/13dc11a594f2e5e0e94d32b08836566c/raw/ea5e46e5777a50a15735d3ddacd56efdcb10a1b8/esx1v2.sql
+    url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/plume.sql
     path: ./esx1v2.sql
     
   - action: connect_database
-  # - action: query_database
-  #   query: |
-  #     DROP DATABASE `dep_keep`;
-  #     CREATE DATABASE `dep_keep` /*!40100 COLLATE 'utf8_general_ci' */;
-  #     USE `dep_keep`;
   - action: query_database
     file: ./esx1v2.sql
 
@@ -60,13 +53,18 @@ tasks:
 
   - action: download_github
     src: https://github.com/HypeLevels/simpledrift
-    ref: v1.1
+    ref: 77e378a2b59fcaca7624cb51575b2a3d39e3b635
     dest: ./resources/simpledrift
 
   - action: download_github
     src: https://github.com/dsheedes/cd_easytime
     ref: aaff63bf6215c8573aef0adf9deaa5746f3884b6
     dest: ./resources/cd_easytime
+
+  - action: download_github
+    src: https://github.com/Bob74/bob74_ipl
+    ref: ed6af93e1850d7f749a9aee42042d1243c6d00fd
+    dest: ./resources/bob74_ipl
 
   # Download ESX resources
   - action: download_github
