@@ -188,4 +188,42 @@ tasks:
     src: https://github.com/esx-framework/esx_holdup
     dest: ./resources/[esx]/esx_holdup
 
+  ## GCPhone stuff
+  - action: download_file
+    url: https://github.com/Re-Ignited-Development/Re-Ignited-Phone/releases/download/V1.4/resources-1.2.zip
+    path: ./tmp/gcphone.zip
+  - action: unzip
+    src: ./tmp/gcphone.zip
+    dest: ./tmp
+  - action: move_path
+    src: ./tmp/resources-1.2/gcphone
+    dest: ./resources/gcphone
+  - action: download_file
+    url: https://gist.githubusercontent.com/tabarra/3d41d03ec701c1de9c1d70b9b5554a96/raw/59fbc15ba42e5356624227aa309b11d5f3b73573/gcphone.sql
+    path: ./tmp/gcphone.sql
+  - action: query_database
+    file: ./tmp/gcphone.sql
+  - action: remove_path
+    path: ./tmp
+
+  ## KL HUD v2
+  - action: download_github
+    src: https://github.com/Kilichi/Kl_HudV2
+    ref: 9c91d4ea00c681a98a5c6f3166886cd2a4220c56
+    dest: ./resources/Kl_HudV2
+
+  - action: replace_string
+    file: ./resources/Kl_HudV2/config/config.lua
+    search: "Config['HideMinimap'] = true"
+    replace: "Config['HideMinimap'] = false"
+
+  - action: replace_string
+    file: ./resources/[esx]/esx_status/client/main.lua
+    search: 'esx_status:onTick'
+    replace: 'Kl_Hud:onTick'
+
+
+
+to_add: |
+  https://forum.cfx.re/t/esx-v1-exm-esx-adminplus/1202550 (something like this)
 
