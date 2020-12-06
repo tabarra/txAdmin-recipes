@@ -5,23 +5,25 @@ author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
 
 tasks:
-  # Download and prepare server.cfg
+  # Download and prepare server.cfg / loadingscreen / database
   - action: download_file
-    url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/server.cfg
-    path: ./server.cfg
+    url: https://github.com/tabarra/txAdmin-recipes/archive/main.zip
+    path: ./tmp/recipes.zip
+  - action: unzip
+    src: ./tmp/recipes.zip
+    dest: ./tmp
 
-  - action: replace_string
-    file: ./server.cfg
-    mode: all_vars
+  - action: move_path
+    src: ./tmp/plume_esx/server.cfg
+    dest: ./server.cfg
+  
+  - action: move_path
+    src: ./tmp/plume_esx/loadingscreen
+    dest: ./resources/loadingscreen
 
-  # Prepare database
-  - action: download_file
-    url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/plume.sql
-    path: ./esx1v2.sql
-    
   - action: connect_database
   - action: query_database
-    file: ./esx1v2.sql
+    file: ./tmp/plume_esx/plume.sql
 
   # Download default CFX resources
   - action: download_github
@@ -198,24 +200,19 @@ tasks:
   - action: move_path
     src: ./tmp/resources-1.2/gcphone
     dest: ./resources/gcphone
+    # FIXME: move to the github plume folder
   - action: download_file
     url: https://gist.githubusercontent.com/tabarra/3d41d03ec701c1de9c1d70b9b5554a96/raw/59fbc15ba42e5356624227aa309b11d5f3b73573/gcphone.sql
     path: ./tmp/gcphone.sql
   - action: query_database
     file: ./tmp/gcphone.sql
-  - action: remove_path
-    path: ./tmp
+  
 
   ## KL HUD v2
   - action: download_github
     src: https://github.com/Kilichi/Kl_HudV2
-    ref: 9c91d4ea00c681a98a5c6f3166886cd2a4220c56
+    ref: ac8a321ff335706509bdc6122a2984a80082e669
     dest: ./resources/Kl_HudV2
-
-  - action: replace_string
-    file: ./resources/Kl_HudV2/config/config.lua
-    search: "Config['HideMinimap'] = true"
-    replace: "Config['HideMinimap'] = false"
 
   - action: replace_string
     file: ./resources/[esx]/esx_status/client/main.lua
@@ -223,6 +220,15 @@ tasks:
     replace: 'Kl_Hud:onTick'
 
 
+  ## Final touches
+  - action: replace_string
+    mode: all_vars
+    file: 
+      - ./server.cfg
+      - ./resources/loadingscreen/config.js
+    
+  - action: remove_path
+    path: ./tmp
 
 to_add: |
   https://forum.cfx.re/t/esx-v1-exm-esx-adminplus/1202550 (something like this)
