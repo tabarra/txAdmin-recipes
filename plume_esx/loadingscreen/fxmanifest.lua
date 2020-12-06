@@ -1,11 +1,13 @@
+fx_version 'cerulean'
+games { 'rdr3', 'gta5' }
+
 author 'PlumeESX'
 description 'Example loading screen originally based on Loqrin\'s page design.'
 version '1.0.0'
 
 files {
-    'public/index.html',
-    'public/css/styles.css',
-    'public/config.json',
+    'index.html',
+    'config.js',
 }
 
-loadscreen 'public/index.html'
+loadscreen 'index.html'
