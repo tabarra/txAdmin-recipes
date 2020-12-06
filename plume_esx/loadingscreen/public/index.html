@@ -1,0 +1,72 @@
+<head>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link type="text/css" rel="stylesheet" href="styles.css" />
+    </head>
+
+<body>
+    <div class="valign-wrapper" style="width: 100%; height: 100%;">
+        <div class="container" style="clear: both; width: 100%;">
+            <h1 id="serverTitle" class="center-align animate__animated"></h1>
+            <div class="progress deep-purple accent-2">
+                <div class="indeterminate deep-purple accent-1"></div>
+            </div>
+            <h4 class="center-align">Plume ESX</h4>
+            <div class="row">
+                <div class="col s6">
+                    <div class="icon-block">
+                        <h3 class="center"><i class="material-icons medium">keyboard</i></h3>
+                    </div>
+                    <h4 class="center-align">Controls</h4>
+                    <div class="z-depth-5 animate__animated animate__delay-2s animate__backInUp">
+                        <ul class="list" id="controlsList"></ul>
+                    </div>
+                </div>
+
+                <div class="col s6">
+                    <div class="icon-block">
+                        <h3 class="center"><i class="material-icons medium">star_rate</i></h3>
+                    </div>
+                    <h4 class="center-align">Features</h4>
+                    <div class="z-depth-5 animate__animated animate__delay-2s animate__backInUp">
+                        <ul class="list" id="featuresList"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="config.js" ></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            //Title Stuff
+            const titleElement = document.getElementById('serverTitle');
+            titleElement.textContent = config.serverTitle;
+            setInterval(() => {
+                titleElement.classList.add('animate__pulse');
+                setTimeout(() => {
+                    titleElement.classList.remove('animate__pulse');
+                }, 1500);
+            }, 2500);
+            
+            
+            //Controls & Features stuff
+            const controlsList = document.getElementById('controlsList');
+            for (let i = 0; i < config.controls.length; i++) {
+                const item = document.createElement('li');
+                item.textContent = config.controls[i];
+                controlsList.appendChild(item)
+            }
+
+            const featuresList = document.getElementById('featuresList');
+            for (let i = 0; i < config.features.length; i++) {
+                const item = document.createElement('li');
+                item.textContent = config.features[i];
+                featuresList.appendChild(item)
+            }
+        });
+    </script>
+</body>
+</head>
