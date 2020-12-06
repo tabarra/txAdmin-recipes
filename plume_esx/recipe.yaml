@@ -5,13 +5,19 @@ author: Tabarra & Chip
 description: A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable. 
 
 tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: 6eaa3525a6858a83546dc9c4ce621e59eae7085c
+    subpath: resources
+    dest: ./resources
+  
   # Download and prepare server.cfg / loadingscreen / database
-  - action: download_file
-    url: https://github.com/tabarra/txAdmin-recipes/archive/main.zip
-    path: ./tmp/recipes.zip
-  - action: unzip
-    src: ./tmp/recipes.zip
-    dest: ./tmp
+  - action: download_github
+    src: https://github.com/tabarra/txAdmin-recipes
+    ref: main
+    subpath: plume_esx
+    dest: ./tmp/plume_esx
 
   - action: move_path
     src: ./tmp/plume_esx/server.cfg
@@ -24,13 +30,6 @@ tasks:
   - action: connect_database
   - action: query_database
     file: ./tmp/plume_esx/plume.sql
-
-  # Download default CFX resources
-  - action: download_github
-    src: https://github.com/citizenfx/cfx-server-data
-    ref: 6eaa3525a6858a83546dc9c4ce621e59eae7085c
-    subpath: resources
-    dest: ./resources
 
   # Download basic resources and ESX dependencies
   - action: download_github
