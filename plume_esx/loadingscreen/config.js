@@ -5,7 +5,7 @@ const config = {
         "F2: Inventory",
         "F3: EasyAdmin",
         "F6: Job menu",
-        "",
+        "F7: Billing menu",
         "",
     ],
     features: [
