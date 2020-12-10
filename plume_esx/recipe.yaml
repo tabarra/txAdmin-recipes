@@ -8,7 +8,7 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: 6eaa3525a6858a83546dc9c4ce621e59eae7085c
+    ref: c75152c2385fea359f8e7de857e5081e7e6e857f
     subpath: resources
     dest: ./resources
   
@@ -66,6 +66,11 @@ tasks:
     src: https://github.com/Bob74/bob74_ipl
     ref: ed6af93e1850d7f749a9aee42042d1243c6d00fd
     dest: ./resources/bob74_ipl
+
+  - action: download_github
+    src: https://github.com/ali-exacute/esx_adminplus
+    ref: 8894c8f0acbcd045f9ebe25031df663e544ce154
+    dest: ./resources/esx_adminplus
 
   # Download ESX resources
   - action: download_github
@@ -228,7 +233,3 @@ tasks:
     
   - action: remove_path
     path: ./tmp
-
-to_add: |
-  https://forum.cfx.re/t/esx-v1-exm-esx-adminplus/1202550 (something like this)
-
