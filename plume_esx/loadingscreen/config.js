@@ -6,7 +6,7 @@ const config = {
         "F3: EasyAdmin",
         "F6: Job menu",
         "F7: Billing menu",
-        "",
+        "SHIFT: Drift",
     ],
     features: [
         "Extendable",
