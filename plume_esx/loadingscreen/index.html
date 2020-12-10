@@ -1,5 +1,4 @@
-<head>
-
+<html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet"
@@ -32,6 +31,18 @@
 
         .list>li:nth-child(odd) {
             background-color: rgb(30, 30, 30, 0.75);
+        }
+
+        .key {
+            display: inline;
+            font-family: monospace;
+            font-weight: 800;
+            margin: 0.25rem;
+            padding: 0.1rem 0.35rem;
+            color: #2C2C2C;
+            background-color: #e7e7e7;
+            border-radius: 4px;
+            box-shadow: 1px 1px 0 2px #969696;
         }
     </style>
 </head>
@@ -86,7 +97,7 @@
             const controlsList = document.getElementById('controlsList');
             for (let i = 0; i < config.controls.length; i++) {
                 const item = document.createElement('li');
-                item.textContent = config.controls[i];
+                item.innerHTML = `<div class="key">${config.controls[i].key}</div>&nbsp; ${config.controls[i].desc}`;
                 controlsList.appendChild(item)
             }
 
@@ -99,4 +110,4 @@
         });
     </script>
 </body>
-</head>
+</html>

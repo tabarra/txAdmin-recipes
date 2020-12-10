@@ -6,9 +6,9 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 **TODO:**
 - [ ] add Re-Ignited-Phone
 - [x] add Kl_HudV2
-- [ ] add some basic esx_adminplus or something
+- [x] add some basic esx_adminplus or something
 - [x] add loading screen
-- [ ] fix the random spawn locations
+- [x] fix the random spawn locations
 - [ ] ensure all esx things are translated and fix reference to a commit
 - [ ] add some easter egg?
 - [x] unfuck https://github.com/esx-framework/esx_drugs/pull/126/files
