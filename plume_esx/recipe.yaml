@@ -257,9 +257,7 @@ tasks:
   ## Final touches
   - action: replace_string
     mode: all_vars
-    file: 
-      - ./server.cfg
-      - ./resources/loadingscreen/config.js
+    file: ./resources/loadingscreen/config.js
     
   - action: remove_path
     path: ./tmp

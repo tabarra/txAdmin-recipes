@@ -2,8 +2,8 @@
     {
         "name": "CFX Default",
         "author": "Tabarra",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "description": "Recipe for the base resources required to run a FiveM server.",
-        "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/cfx_default/recipe.yaml"
+        "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/76d7564e8d0a2ddab8b1c5cfc2fcb48e5dce57c4/cfx_default/recipe.yaml"
     }
 ]

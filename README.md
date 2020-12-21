@@ -10,6 +10,6 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 - [x] fix the random spawn locations
 - [x] unfuck https://github.com/esx-framework/esx_drugs/pull/126/files
 - [x] ensure all esx things are translated and fix reference to a commit
-- [ ] add Re-Ignited-Phone, move db to this repo
+- [x] add Re-Ignited-Phone, move db to this repo
 - [ ] write a nice "README.md" for people that never had an ESX server
 - [ ] tidy up all files
