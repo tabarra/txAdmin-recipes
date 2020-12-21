@@ -7,6 +7,7 @@ version '1.0.0'
 
 files {
     'index.html',
+    'background.css',
     'config.js',
 }
 

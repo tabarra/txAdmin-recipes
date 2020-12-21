@@ -1,19 +1,20 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="background.css">
     <style>
         body {
-            background: rgb(103, 83, 185);
-            background: radial-gradient(circle, rgba(103, 83, 185, 1) 3%, rgba(11, 31, 62, 1) 93%);
-            overflow: hidden;
             color: #ede7f6;
+            overflow-anchor: none;
         }
 
         h1, h2, h3, h4 {
-            font-weight: 100 !important;
+            font-weight: 400 !important;
+            background: -webkit-linear-gradient(white, #586069);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .list>li {
@@ -45,13 +46,17 @@
             box-shadow: 1px 1px 0 2px #969696;
         }
     </style>
+    
 </head>
 
 <body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
     <div class="valign-wrapper" style="width: 100%; height: 100%;">
         <div class="container" style="clear: both; width: 100%;">
             <h1 id="serverTitle" class="center-align animate__animated"></h1>
-            <div class="progress deep-purple accent-2">
+            <div class="progress deep-purple accent-3">
                 <div class="indeterminate deep-purple accent-1"></div>
             </div>
             <h4 class="center-align">Plume ESX</h4>
