@@ -3,8 +3,7 @@ $onesync: on
 name: CFX Default
 version: 2.0.0
 author: Tabarra
-description: |-
-    Recipe for the base resources required to run a server.
+description: Recipe for the base resources required to run a minimal FiveM server.
 
 tasks: 
   # Download default CFX resources
@@ -14,6 +13,7 @@ tasks:
     subpath: resources
     dest: ./resources
 
+  # Download default server.cfg
   - action: download_file
     url: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/cfx_default/server.cfg
     path: ./server.cfg
