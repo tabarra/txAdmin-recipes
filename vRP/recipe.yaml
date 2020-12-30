@@ -12,7 +12,7 @@ tasks:
     subpath: resources
     dest: ./resources
   
-  # Download and prepare server.cfg / loadingscreen / database
+  # Download and prepare server.cfg and vrp
   - action: download_github
     src: https://github.com/Hamy-os/txAdmin-recipes/
     dest: ./tmp/vRP
