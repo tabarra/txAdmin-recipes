@@ -14,5 +14,13 @@
         "version": "1.0.0",
         "description": "A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable.",
         "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/recipe.yaml"
+    },
+    {
+        "engine": 2,
+        "name": "vRP",
+        "author": "DunkoUK and Hamy",
+        "version": "1.0.0",
+        "description": "vRP is a roleplaying framework built for fivem",
+        "url": "https://github.com/DunkoUK/dunko_vrp"
     }
 ]
