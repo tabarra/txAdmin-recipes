@@ -14,8 +14,7 @@ tasks:
   
   # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/Hamzathedev/teststststts/tree/main
-    ref: main 
+    src: https://github.com/Hamy-os/txAdmin-recipes/
     dest: ./tmp/vRP
 
   - action: download_github
@@ -24,12 +23,12 @@ tasks:
     dest: ./resources/EasyAdmin
 
   - action: move_path
-    src: ./tmp/vRP/server.cfg
+    src: ./tmp/vRP/vRP/server.cfg
     dest: ./server.cfg
 
   # Download basic vRP things
   - action: download_github
-    src: https://github.com/DunkoUK/dunko_vrp
+    src: https://github.com/Hamy-os/dunko_vrp
     ref: master
     dest: ./resources/[vRP]
 
