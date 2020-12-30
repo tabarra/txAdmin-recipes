@@ -1,6 +1,6 @@
 $engine: 2
 name: vRP
-version: v1.0.0
+version: v1.0.1
 author: DunkoUK and Hamy
 description: vRP is a roleplaying framework made for fivem.
 
@@ -12,10 +12,14 @@ tasks:
     subpath: resources
     dest: ./resources
   
-  # Download and prepare server.cfg and vrp
+  # Download and prepare server.cfg / loadingscreen / database
   - action: download_github
     src: https://github.com/Hamy-os/txAdmin-recipes/
     dest: ./tmp/vRP
+
+  - action: download_github
+    src: https://github.com/Hamy-os/sql-recipe
+    dest: ./tmp/sql
 
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
@@ -28,7 +32,7 @@ tasks:
 
   # Download basic vRP things
   - action: download_github
-    src: https://github.com/Hamy-os/dunko_vrp
+    src: https://github.com/Hamy-os/dunko_vrp/tree/master/Apartments
     ref: master
     dest: ./resources/[vRP]
 
@@ -37,6 +41,23 @@ tasks:
     src: https://github.com/Kilichi/Kl_HudV2
     ref: ac8a321ff335706509bdc6122a2984a80082e669
     dest: ./resources/Kl_HudV2
+
+  - action: connect_database
+
+  - action: query_database
+    file: ./tmp/sql/vrp_business.sql
+
+  - action: query_database
+    file: ./tmp/sql/vrp_characters.sql
+
+  - action: query_database
+    file: ./tmp/sql/vrp_coins.sql
+
+  - action: query_database
+    file: ./tmp/sql/vrp_garages.sql
+
+  - action: query_database
+    file: ./tmp/sql/vrp_user_vehicles.sql
 
   - action: remove_path
     path: ./tmp
