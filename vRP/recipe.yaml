@@ -64,5 +64,9 @@ tasks:
     mode: all_vars
     file: ./server.cfg
 
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/[VRP]/vrp/cfg/base.lua
+
   - action: remove_path
     path: ./tmp
