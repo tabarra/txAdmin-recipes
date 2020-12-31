@@ -1,7 +1,7 @@
 $engine: 2
 name: vRP
 version: v1.0.1
-author: DunkoUK and Hamy
+author: Hamy
 description: vRP is a roleplaying framework made for fivem.
 
 tasks:
@@ -56,8 +56,9 @@ tasks:
   - action: query_database
     file: ./tmp/sql/vrp_garages.sql
 
-  - action: query_database
-    file: ./tmp/sql/vrp_user_vehicles.sql
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/[vRP]/ghmattimysql/config.json
 
   - action: remove_path
     path: ./tmp
