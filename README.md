@@ -3,6 +3,10 @@ Some Public Recipes for txAdmin's Server Deployer!
 Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md)**.
 
 ## PlumeESX
+
+
+[![Plume ESX Video Tutorial](https://i.imgur.com/jjUbS1Z.png)](https://www.youtube.com/watch?v=iGfwUCO0RZQ)
+
 **TODO:**
 - [x] add Kl_HudV2
 - [x] add some basic esx_adminplus or something
