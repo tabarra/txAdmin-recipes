@@ -55,6 +55,9 @@ tasks:
 
   - action: query_database
     file: ./tmp/sql/vrp_garages.sql
+    
+  - action: query_database
+    file: ./tmp/sql/user_appartement.sql
 
   - action: replace_string
     mode: all_vars
