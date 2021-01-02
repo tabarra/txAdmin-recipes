@@ -21,11 +21,6 @@ tasks:
     src: https://github.com/brouznouf/fivem-mysql-async
     dest: ./resources/mysql-async
 
-  - action: download_github
-    src: https://github.com/Blumlaut/EasyAdmin
-    ref: 71b9f1340f6840abe6748dee40c472e60f38fb03
-    dest: ./resources/EasyAdmin
-
   - action: move_path
     src: ./tmp/zombie/zombie/server.cfg
     dest: ./server.cfg
