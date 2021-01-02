@@ -67,6 +67,17 @@ tasks:
     
   - action: query_database
     file: ./tmp/sql/user_appartement.sql
+    
+  - action: write_file
+    file: ./resources/ghmattimysql/ghmattimysql/config.json
+    append: true
+    data: |
+      cfg.db = {
+      host = {{dbHost}}
+      database = {{dbName}}
+      user = {{dbUsername}}, 
+      password = {{dbPassword}}
+      }
 
   - action: replace_string
     mode: all_vars
