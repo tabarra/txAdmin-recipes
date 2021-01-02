@@ -35,6 +35,15 @@ tasks:
     src: https://github.com/Hamy-os/dunko_vrp
     ref: master
     dest: ./resources/[vRP]
+    
+  # Download DB Driver
+  - action: download_github
+    src: https://github.com/brefabu/Dunko_ghmattimysql
+    dest: ./resources/ghmattimysql
+    
+  - action: download_github
+    src: https://github.com/brefabu/Dunko_mysql-async
+    dest: ./resources/mysql-aync
 
   ## KL HUD v2
   - action: download_github
