@@ -28,7 +28,7 @@ tasks:
 
   # Download zombie
   - action: download_github
-    src: https://github.com/Dislaik/zombieoutbreak
+    src: https://github.com/Hamy-os/zombieoutbreak
     dest: ./resources/zombie
 
   - action: connect_database
@@ -39,6 +39,10 @@ tasks:
   - action: replace_string
     mode: all_vars
     file: ./server.cfg
+    
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/zombie/zombieoutbreak.sql
 
   - action: remove_path
     path: ./tmp
