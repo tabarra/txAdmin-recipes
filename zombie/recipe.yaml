@@ -1,0 +1,51 @@
+$engine: 2
+name: Zombie
+version: v1.0.0
+author: Dislaik and Hamy
+description: This is a zombie rpg framework built for fivem
+
+tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: 88f4f974b855e0bf2ca5f51b9916648bd5b7d44b
+    subpath: resources
+    dest: ./resources
+  
+  # Download and prepare server.cfg 
+  - action: download_github
+    src: https://github.com/Hamy-os/txAdmin-recipes/
+    dest: ./tmp/zombie
+
+  - action: download_github
+    src: https://github.com/Blumlaut/EasyAdmin
+    ref: 71b9f1340f6840abe6748dee40c472e60f38fb03
+    dest: ./resources/EasyAdmin
+
+  - action: move_path
+    src: ./tmp/zombie/zombie/server.cfg
+    dest: ./server.cfg
+
+  # Download zombie
+  - action: download_github
+    src: https://github.com/Dislaik/zombieoutbreak
+    ref: master
+    dest: ./resources/zombie
+
+  ## KL HUD v2
+  - action: download_github
+    src: https://github.com/Kilichi/Kl_HudV2
+    ref: ac8a321ff335706509bdc6122a2984a80082e669
+    dest: ./resources/Kl_HudV2
+
+  - action: connect_database
+    
+  - action: query_database
+    file: ./resources/zombie/zombieoutbreak.sql
+
+  - action: replace_string
+    mode: all_vars
+    file: ./server.cfg
+
+  - action: remove_path
+    path: ./tmp

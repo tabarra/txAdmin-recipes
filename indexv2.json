@@ -21,6 +21,14 @@
         "author": "DunkoUK and Hamy",
         "version": "1.0.0",
         "description": "vRP is a roleplaying framework built for fivem",
-        "url": "https://github.com/Hamzathedev/txAdmin-recipes/blob/main/vRP/recipe.yaml"
+        "url": "https://github.com/Hamy-os/txAdmin-recipes/blob/main/vRP/recipe.yaml"
+    }
+    {
+        "engine": 2,
+        "name": "Zombie",
+        "author": "Dislaik and Hamy",
+        "version": "1.0.0",
+        "description": "This is a zombie rpg framework built for fivem",
+        "url": "https://github.com/Hamy-os/txAdmin-recipes/blob/main/zombie/recipe.yaml"
     }
 ]

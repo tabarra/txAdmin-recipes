@@ -1,9 +1,34 @@
 [
     {
+        "engine": 2,
         "name": "CFX Default",
         "author": "Tabarra",
-        "version": "1.0.1",
-        "description": "Recipe for the base resources required to run a FiveM server.",
-        "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/76d7564e8d0a2ddab8b1c5cfc2fcb48e5dce57c4/cfx_default/recipe.yaml"
+        "version": "2.0.0",
+        "description": "Recipe for the base resources required to run a minimal FiveM server.",
+        "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/cfx_default/recipe.yaml"
+    },
+    {
+        "engine": 2,
+        "name": "Plume ESX",
+        "author": "Tabarra & Chip",
+        "version": "1.0.0",
+        "description": "A full featured (13 jobs) and highly configurable yet lightweight ESX v1.2 base that can be easily extendable.",
+        "url": "https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/plume_esx/recipe.yaml"
+    },
+    {
+        "engine": 2,
+        "name": "vRP",
+        "author": "DunkoUK and Hamy",
+        "version": "1.0.0",
+        "description": "vRP is a roleplaying framework built for fivem",
+        "url": "https://github.com/Hamy-os/txAdmin-recipes/blob/main/vRP/recipe.yaml"
+    }
+    {
+        "engine": 2,
+        "name": "Zombie",
+        "author": "Dislaik and Hamy",
+        "version": "1.0.0",
+        "description": "This is a zombie rpg framework built for fivem",
+        "url": "https://github.com/Hamy-os/txAdmin-recipes/blob/main/zombie/recipe.yaml"
     }
 ]
