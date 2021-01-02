@@ -1,5 +1,6 @@
   
 $engine: 2
+$minFxVersion: 3362
 name: Zombie
 version: v1.0.0
 author: Dislaik and Hamy
