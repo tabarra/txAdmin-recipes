@@ -39,11 +39,11 @@ tasks:
   # Download DB Driver
   - action: download_github
     src: https://github.com/brefabu/Dunko_ghmattimysql
-    dest: ./resources/ghmattimysql
+    dest: ./resources/[ghmattimysql]
     
   - action: download_github
     src: https://github.com/brefabu/Dunko_mysql-async
-    dest: ./resources/mysql-aync
+    dest: ./resources/[mysql-aync]
 
   ## KL HUD v2
   - action: download_github
