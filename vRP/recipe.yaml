@@ -38,10 +38,6 @@ tasks:
     
   # Download DB Driver
   - action: download_github
-    src: https://github.com/brefabu/Dunko_ghmattimysql
-    dest: ./resources/[ghmattimysql]
-    
-  - action: download_github
     src: https://github.com/brefabu/Dunko_mysql-async
     dest: ./resources/[mysql-aync]
 
@@ -70,7 +66,7 @@ tasks:
 
   - action: replace_string
     mode: all_vars
-    file: ./resources/[ghmattimysql]/ghmattimysql/config.json
+    file: ./resources/[vRP]/ghmattimysql/config.json
 
   - action: replace_string
     mode: all_vars
@@ -82,3 +78,4 @@ tasks:
 
   - action: remove_path
     path: ./tmp
+    
