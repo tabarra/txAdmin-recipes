@@ -17,6 +17,10 @@ tasks:
     src: https://github.com/Hamy-os/txAdmin-recipes/
     dest: ./tmp/zombie
 
+   -action: download_github
+    src: https://github.com/brouznouf/fivem-mysql-async
+    dest: ./resources/mysql-async
+
   - action: download_github
     src: https://github.com/Blumlaut/EasyAdmin
     ref: 71b9f1340f6840abe6748dee40c472e60f38fb03
