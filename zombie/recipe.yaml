@@ -28,7 +28,7 @@ tasks:
 
   # Download zombie
   - action: download_github
-    src: https://github.com/Hamy-os/zombieoutbreak
+    src: https://github.com/Dislaik/zombieoutbreak
     dest: ./resources/zombie
 
   - action: connect_database
