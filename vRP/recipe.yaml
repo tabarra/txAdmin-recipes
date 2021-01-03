@@ -4,6 +4,9 @@ version: v1.0.1
 author: DunkoUK and Hamy
 description: vRP is a roleplaying framework made for fivem.
 
+variables: 
+    script: Type 1 to use scripthook and 0 to disable it
+
 tasks:
   # Download default CFX resources
   - action: download_github
