@@ -31,11 +31,15 @@ tasks:
   - action: download_github
     src: https://github.com/Dislaik/zombieoutbreak
     dest: ./resources/zombie
+    
+  - action: download_github
+    src: https://github.com/Hamy-os/zombieoutbreak
+    dest: ./tmp/sql
 
   - action: connect_database
     
   - action: query_database
-    file: ./resources/zombie/zombieoutbreak.sql
+    file: ./tmp/sql/zombieoutbreak.sql
 
   - action: replace_string
     mode: all_vars
