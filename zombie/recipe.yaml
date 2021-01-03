@@ -6,6 +6,9 @@ version: v1.0.0
 author: Dislaik and Hamy
 description: This is a zombie rpg framework built for fivem
 
+variables: 
+    script: Type 1 to use scripthook and 0 to disable it
+
 tasks:
   # Download default CFX resources
   - action: download_github
