@@ -1,0 +1,50 @@
+  
+$engine: 2
+name: Zombie
+version: v1.0.0
+author: Hamy-os
+description: This is a zombie rpg framework built for fivem
+
+variables: 
+    script: Type 1 to use scripthook and 0 to disable it
+    admin: Please put your steam hex here find it at vacbanned.com
+    slots: 48
+    key: please put your steam web api key
+    
+tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: 88f4f974b855e0bf2ca5f51b9916648bd5b7d44b
+    subpath: resources
+    dest: ./resources
+  
+    # Download zombie
+  - action: download_github
+    src: https://github.com/Dislaik/zombieoutbreak
+    dest: ./resources/zombie
+
+  # Download and prepare server.cfg  / database
+  - action: download_github
+    src: https://github.com/tabarra/txAdmin-recipes/
+    dest: ./tmp/zombie
+
+  - action: download_github
+    src: https://github.com/brouznouf/fivem-mysql-async
+    dest: ./resources/mysql-async
+
+  - action: move_path
+    src: ./tmp/zombie/zombie/server.cfg
+    dest: ./server.cfg
+
+  - action: connect_database
+    
+  - action: query_database
+    file: ./resources/zombie/zombieoutbreak.sql
+
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/zombie/zombieoutbreak.sql
+
+  - action: remove_path
+    path: ./tmp
