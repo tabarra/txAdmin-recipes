@@ -4,12 +4,6 @@ name: Zombie
 version: v1.0.0
 author: Hamy-os
 description: This is a zombie rpg framework built for fivem
-
-variables: 
-    script: Type 1 to use scripthook and 0 to disable it
-    admin: Please put your steam hex here find it at vacbanned.com
-    slots: 48
-    key: please put your steam web api key
     
 tasks:
   # Download default CFX resources
