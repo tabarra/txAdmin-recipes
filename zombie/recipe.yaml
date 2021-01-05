@@ -1,5 +1,6 @@
   
 $engine: 2
+$minFxVersion: 3362
 name: Zombie
 version: v1.0.0
 author: Hamy-os
@@ -30,6 +31,10 @@ tasks:
   - action: move_path
     src: ./tmp/zombie/zombie/server.cfg
     dest: ./server.cfg
+    
+  - action: move_path
+    src: ./tmp/zombie/zombie/logo.png
+    dest: ./logo.png
 
   - action: connect_database
     
