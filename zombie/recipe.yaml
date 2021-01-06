@@ -17,7 +17,7 @@ tasks:
     # Download zombie
   - action: download_github
     src: https://github.com/Dislaik/zombieoutbreak
-    dest: ./resources/zombie
+    dest: ./resources/zombieoutbreak
 
   # Download and prepare server.cfg  / database
   - action: download_github
