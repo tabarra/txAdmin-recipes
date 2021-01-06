@@ -41,9 +41,5 @@ tasks:
   - action: query_database
     file: ./resources/zombie/zombieoutbreak.sql
 
-  - action: replace_string
-    mode: all_vars
-    file: ./resources/zombie/zombieoutbreak.sql
-
   - action: remove_path
     path: ./tmp
