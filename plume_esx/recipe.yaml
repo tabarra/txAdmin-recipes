@@ -40,6 +40,10 @@ tasks:
     dest: ./resources/EasyAdmin
 
   - action: download_github
+    src: https://github.com/citizenfx/screenshot-basic
+    dest: ./resources/[local]/screenshot-basic
+
+  - action: download_github
     src: https://github.com/esx-framework/async
     ref: 12dd585b0b4965596487f12039ce6f0ab4de319a
     dest: ./resources/async
@@ -84,11 +88,26 @@ tasks:
     src: https://github.com/esx-framework/es_extended
     ref: legacy
     dest: ./resources/[esx]/es_extended
+  - action: download_github
+    src: https://github.com/esx-framework/esx_atm
+    dest: ./resources/[esx]/esx_atm 
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_default
     ref: 2d46087ade9369c46df1d80b706dc13e6e4ac673
     dest: ./resources/[esx]/esx_menu_default
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_rpchat
+    dest: ./resources/[esx]/esx_rpchat
+
+  - action: download_github
+    src: https://github.com/FrazzIe/mumble-voip-fivem
+    dest: ./resources/[esx]/mumble-voip
+
+  - action: download_github
+    src: https://github.com/FrazzIe/rp-radio
+    dest: ./resources/[esx]/rp-radio
 
   - action: download_github
     src: https://github.com/esx-framework/esx_menu_dialog
@@ -229,6 +248,36 @@ tasks:
     src: https://github.com/esx-framework/esx_holdup
     ref: 1f3779c265db5cd9039b91633d9d86b5293d8d4b
     dest: ./resources/[esx]/esx_holdup
+
+    ##Test stuff 
+  - action: download_github
+    src: https://github.com/Abel-Gaming/Robbery-Shop-ESX
+    dest: ./resources/[esx]/esx_robbery
+    
+  - action: download_github
+    src: https://github.com/qalle-git/esx-qalle-camerasystem
+    dest: ./resources/[esx]/esx-qalle-camerasystem
+    
+  - action: download_github
+    src: https://github.com/plunkettscott/interact-sound
+    dest: ./resources/interact-sound
+    
+  - action: download_github
+    src: https://github.com/czsquizer/sqz_carmenu
+    dest: ./resources/sqz_carmenu
+    
+  - action: download_github
+    src: https://github.com/Puntherline/pun_idgun
+    dest: ./resources/pun_idgun
+    
+  - action: download_github
+    src: https://github.com/thelindat/nui_doorlock
+    dest: ./resources/nui_doorlock
+    
+  - action: download_github
+    src: https://github.com/guillerp8/guille_carhud-mp-h
+    dest: ./resources/carhud
+    
 
   ## GCPhone stuff
   - action: download_file
