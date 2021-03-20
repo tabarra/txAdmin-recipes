@@ -8,7 +8,7 @@ tasks:
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
-    ref: 88f4f974b855e0bf2ca5f51b9916648bd5b7d44b
+    ref: f559e8bbb7a5c1ee8db1d26ed2cf7d29fa59e146
     subpath: resources
     dest: ./resources
   
@@ -53,6 +53,11 @@ tasks:
     src: https://github.com/esx-framework/cron
     ref: 89914888d7dd801fb8430aeb386fd423e0f86f46
     dest: ./resources/cron
+
+      - action: download_github
+    src: https://github.com/esx-framework/instance
+    ref: 56295645638474a8780d3a2c2da356c28032ba3f
+    dest: ./resources/instance
 
   - action: download_github
     src: https://github.com/esx-framework/skinchanger
@@ -117,13 +122,18 @@ tasks:
 
   - action: download_github
     src: https://github.com/esx-framework/esx_status
-    ref: bce4abf4b507fa453a550fdbd25e2f3b2efe7064
+    ref: 3d526522fa78c37b5967005d19106eadd27695f1
     dest: ./resources/[esx]/esx_status
 
   - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
-    ref: 9a35c8f53fd2f9f2ca481fe9e9eba876c214db74
+    ref: dcde28674724f65864dbeb7abe2978981bf0b17c
     dest: ./resources/[esx]/esx_basicneeds
+
+    - action: download_github
+    src: https://github.com/esx-framework/esx_optionalneeds
+    ref: a8041956307766027f1d36d0fd43ba03c0318ba0
+    dest: ./resources/[esx]/esx_optionalneeds
 
   - action: download_github
     src: https://github.com/esx-framework/esx_billing
@@ -139,6 +149,11 @@ tasks:
     src: https://github.com/esx-framework/esx_addonaccount
     ref: 3573919be24068283a3103a08414f64398381513
     dest: ./resources/[esx]/esx_addonaccount
+
+      - action: download_github
+    src: https://github.com/esx-framework/esx_property
+    ref: 1475b201c01ff0cf9c4433e84da9444a10249312
+    dest: ./resources/[esx]/esx_property
 
   - action: download_github
     src: https://github.com/esx-framework/esx_society
