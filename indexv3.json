@@ -6,13 +6,5 @@
         "version": "3.1.0",
         "description": "Recipe for the base resources required to run a minimal FiveM server.",
         "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
-    },
-    {
-        "engine": 3,
-        "name": "Plume ESX",
-        "author": "Tabarra & Chip",
-        "version": "2.2.0",
-        "description": "A full featured (13 jobs) and highly configurable yet lightweight ESX v1-final base that can be easily extendable.",
-        "url": "https://raw.githubusercontent.com/tabarra/PlumeESX-recipe/main/recipe.yaml"
     }
 ]
