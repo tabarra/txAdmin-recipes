@@ -6,5 +6,13 @@
         "version": "3.1.0",
         "description": "Recipe for the base resources required to run a minimal FiveM server.",
         "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "QBCore Framework",
+        "author": "JericoFx & Kakarot & Mojito & Hamy",
+        "version": "1.3.0",
+        "description": "Recipe for the Qbus framework",
+        "url": "https://raw.githubusercontent.com/Hamy-os/txAdminRecipe/main/qbcore.yaml"
     }
 ]
