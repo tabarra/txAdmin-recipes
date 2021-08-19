@@ -3,8 +3,32 @@
         "engine": 3,
         "name": "CFX Default",
         "author": "Tabarra",
-        "version": "3.1.0",
+        "version": "3.2.0",
         "description": "Recipe for the base resources required to run a minimal FiveM server.",
         "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "Plume ESX Legacy",
+        "author": "Tabarra & SaltySea",
+        "version": "3.1.0",
+        "description": "A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. ",
+        "url": "https://raw.githubusercontent.com/tabarra/PlumeESX-recipe/main/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "QBCore Framework",
+        "author": "JericoFx & Kakarot & Hamy",
+        "version": "2.0.0",
+        "description": "An advanced FiveM RP framework including jobs, gangs, housing & more!",
+        "url": "https://raw.githubusercontent.com/qbcore-framework/txAdminRecipe/main/qbcore.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "ZAP-Hosting ESX Pack",
+        "author": "ZAP-Hosting.com",
+        "version": "1.0.0",
+        "description": "An ESX pack with additional bug-fixes, based on esx-legacy.",
+        "url": "https://raw.githubusercontent.com/zap-fivem/esx_12_recipe/main/recipe.yml"
     }
 ]
