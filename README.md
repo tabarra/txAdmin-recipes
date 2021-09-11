@@ -30,6 +30,7 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
     - Major: multiple updates, chances of breaking something;
     - Minor: small updates, settings change and features added;
     - Patch: changing description, some minor text or something like that.
+- Your recipe must not violate or facilitate violation of any license or copyright, so it should only contain resources that are open source (eg GPLv3/MIT/Apache) or sharable (eg Creative Commons). Please make sure it does not contain any leaked content. Although it is hard to find a scenario where a recipe could _directly_ violate any license, this is a headache that we must try to avoid;
 
 ****
 <p align="center">
