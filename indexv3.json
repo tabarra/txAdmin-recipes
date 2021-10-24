@@ -3,7 +3,7 @@
         "engine": 3,
         "name": "CFX Default",
         "author": "Tabarra",
-        "version": "3.2.0",
+        "version": "3.3.0",
         "description": "Recipe for the base resources required to run a minimal FiveM server.",
         "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
     },
@@ -19,7 +19,7 @@
         "engine": 3,
         "name": "QBCore Framework",
         "author": "JericoFx & Kakarot & Hamy",
-        "version": "2.0.0",
+        "version": "2.1.0",
         "description": "An advanced FiveM RP framework including jobs, gangs, housing & more!",
         "url": "https://raw.githubusercontent.com/qbcore-framework/txAdminRecipe/main/qbcore.yaml"
     },
