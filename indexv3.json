@@ -11,7 +11,7 @@
         "engine": 3,
         "name": "Plume ESX Legacy",
         "author": "Tabarra & SaltySea",
-        "version": "3.2.0",
+        "version": "3.3.0",
         "description": "A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. ",
         "url": "https://raw.githubusercontent.com/tabarra/PlumeESX-recipe/main/recipe.yaml"
     },
