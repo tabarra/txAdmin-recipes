@@ -9,14 +9,6 @@
     },
     {
         "engine": 3,
-        "name": "Plume ESX Legacy",
-        "author": "Tabarra & SaltySea",
-        "version": "3.3.0",
-        "description": "A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. ",
-        "url": "https://raw.githubusercontent.com/tabarra/PlumeESX-recipe/main/recipe.yaml"
-    },
-    {
-        "engine": 3,
         "name": "QBCore Framework",
         "author": "JericoFx & Kakarot & Hamy",
         "version": "2.1.0",
