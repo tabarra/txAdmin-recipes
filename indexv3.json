@@ -17,6 +17,14 @@
     },
     {
         "engine": 3,
+        "name": "ESX Legacy",
+        "author": "ESX-Framework",
+        "version": "0.2.3",
+        "description": "A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. !",
+        "url": "https://raw.githubusercontent.com/esx-framework/ESX-recipes/legacy/recipe.yaml"
+    },
+    {
+        "engine": 3,
         "name": "ZAP-Hosting ESX Pack",
         "author": "ZAP-Hosting.com",
         "version": "1.0.0",
