@@ -4,9 +4,10 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 
 ## Popular recipes:
 - [CFX Default](https://github.com/tabarra/CFX-Default-recipe)
-- [PlumeESX Legacy](https://github.com/tabarra/PlumeESX-recipe)
 - [QBCore Framework](https://github.com/qbcore-framework/txAdminRecipe)
+- [ESX Legacy](https://github.com/esx-framework/ESX-recipes)
 - [ZAP-Hosting ESX Pack](https://github.com/zap-fivem/esx_12_recipe)
+- [PlumeESX Legacy](https://github.com/tabarra/PlumeESX-recipe) (deprecated)
 
 ## Recipe-making Guidelines and Best Practices:
 - Always start your recipe based on the CFX Default one;
