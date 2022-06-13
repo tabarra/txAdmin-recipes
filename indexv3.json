@@ -20,7 +20,7 @@
         "name": "ESX Legacy",
         "author": "ESX",
         "version": "0.3.4",
-        "description": "A full featured and highly configurable yet lightweight ESX Legacy base that can be easily extended. ",
+        "description": "A full featured ESX Legacy with the most up-to-date, and sometimes unstable, features",
         "url": "https://raw.githubusercontent.com/esx-framework/ESX-recipes/legacy/recipe.yaml"
     },
     {
