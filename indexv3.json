@@ -28,7 +28,7 @@
         "name": "ZAP-Hosting ESX Pack",
         "author": "ZAP-Hosting.com",
         "version": "1.0.0",
-        "description": "An stable ESX pack with additional bug-fixes, based on slightly older verions of ESX Legacy",
+        "description": "An ESX pack with additional bug-fixes, based on esx-legacy.",
         "url": "https://raw.githubusercontent.com/zap-fivem/esx_12_recipe/main/recipe.yml"
     }
 ]
