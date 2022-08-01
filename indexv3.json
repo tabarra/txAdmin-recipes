@@ -19,7 +19,7 @@
         "engine": 3,
         "name": "ESX Legacy",
         "author": "ESX",
-        "version": "0.3.4",
+        "version": "0.3.6",
         "description": "The #1 Framework for FiveM pre-configured with Jobs, Husing, Weapons, Vehicles, Drugs and more!",
         "url": "https://raw.githubusercontent.com/esx-framework/ESX-recipes/legacy/recipe.yaml"
     },
