@@ -33,11 +33,11 @@
     },
     {
         "engine": 3,
-        "name": "Gum Framework (RedM)",
-        "author": "Gum",
+        "name": "VORP framework (RedM)",
+        "author": "Blue & Outsider",
         "version": "0.0.1",
-        "description": "A recipe for Gum Framwork, a complete and powerful framework for RedM.",
-        "url": "https://raw.githubusercontent.com/Nicoo34/GumFramework-Recipe/main/gum_framework.yaml"
+        "description": "VORP is the lead framework to create serious rp servers for RedM It offers both C# and Lua versions for anyone to create a server and develop to their needs.",
+        "url": "https://raw.githubusercontent.com/VORPCORE/VORP_txAdmin/main/vorp_recipe.yaml"
     }
 
 ]
