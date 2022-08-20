@@ -30,5 +30,14 @@
         "version": "1.0.0",
         "description": "An ESX pack with additional bug-fixes, based on esx-legacy.",
         "url": "https://raw.githubusercontent.com/zap-fivem/esx_12_recipe/main/recipe.yml"
+    },
+    {
+        "engine": 3,
+        "name": "Gum Framework (RedM)",
+        "author": "Gum",
+        "version": "0.0.1",
+        "description": "A recipe for Gum Framwork, a complete and powerful framework for RedM.",
+        "url": "https://raw.githubusercontent.com/Nicoo34/GumFramework-Recipe/main/gum_framework.yaml"
     }
+
 ]
