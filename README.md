@@ -27,6 +27,7 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
     - The loading screen must clearly state what that base is, and how to use it like keys to press and etc ([plume example](https://i.imgur.com/BREZLDW.png));
     - On important files like `server.cfg`, leave plenty of comments instructing the admin how to use or configure your base;
 - Execute a `waste_time` with 10 seconds every 25 `download_github` actions, or 50 if setting the `ref` parameter. Too many GitHub requests in a short ammount of time will result in a 403 error;
+- If your resources have some kind of inventory or any other NUI that activates on the press of `[TAB]`, it MUST use the [IsNuiFocused()](https://docs.fivem.net/natives/?_0x98545E6D) to prevent it stealing the focus from txAdmin menu when it is open ([example commit](https://github.com/qbcore-framework/qb-inventory/commit/978904e83dd379e44a2370347f311533df707c12)).
 - It is recommended the use semantic versioning for your version number, for example `v3.2.1` (3 major, 2 minor, 1 patch):
     - Major: multiple updates, chances of breaking something;
     - Minor: small updates, settings change and features added;
