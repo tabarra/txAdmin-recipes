@@ -10,7 +10,7 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 - [PlumeESX Legacy](https://github.com/tabarra/PlumeESX-recipe) (deprecated)
 
 ## Recipe-making Guidelines and Best Practices:
-- Always start your recipe based on the CFX Default one;
+- Always start your recipe based on the CFX Default recipe. Copy the structure from server.cfg, resources folder, and recipe YAML;
 - The recipe must "just work", without the user needing to edit anything before starting the server, like database credentials;
 - Database stuff:
     - Preferable use the `{{dbConnectionString}}` placeholder in `server.cfg` instead of writing to some database config file;
@@ -24,7 +24,7 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 - Recipes must be onesync compatible, even if just `legacy`;
 - Always set `$onesync` to `on` if your recipe supports it;
 - Considering that most people are not familiar with what your recipe is installing, guarantee a good onboarding experience with the following:
-    - The loading screen must clearly state what that base is, and how to use it like keys to press and etc ([plume example](https://i.imgur.com/BREZLDW.png));
+    - The loading screen must clearly state what that framework is, and how to use it like keys to press and etc ([plume example](https://i.imgur.com/BREZLDW.png));
     - On important files like `server.cfg`, leave plenty of comments instructing the admin how to use or configure your framework;
 - Execute a `waste_time` with 10 seconds every 25 `download_github` actions, or 50 if setting the `ref` parameter. Too many GitHub requests in a short amount of time will result in a 403 error;
 - If your resources have some kind of inventory or any other NUI that activates on the press of `[TAB]`, it MUST use the [IsNuiFocused()](https://docs.fivem.net/natives/?_0x98545E6D) to prevent it stealing the focus from txAdmin menu when it is open ([example commit](https://github.com/qbcore-framework/qb-inventory/commit/978904e83dd379e44a2370347f311533df707c12)).
