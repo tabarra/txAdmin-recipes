@@ -38,7 +38,7 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 ****
 <p align="center">
     <p align="center">
-        <b>Do you have any questions? Things are looking too complicated? Join <code>#recipe-making</code> in our Discord!</b> <br>
+        <b>Do you have any questions? Things are looking too complicated? Join our Discord!</b> <br>
         <a href="https://discord.gg/AFAAXzq"><img src="https://discordapp.com/api/guilds/577993482761928734/widget.png?style=banner2" alt="txadmin discord"></img></a>
     </p>
 </p>
