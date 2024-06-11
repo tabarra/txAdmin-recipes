@@ -1,1 +1,44 @@
-
+[
+    {
+        "engine": 3,
+        "name": "CFX Default FiveM",
+        "tags": ["fivem"],
+        "description": "Just the base resources required to run a FiveM server.",
+        "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "ESX Legacy",
+        "tags": ["fivem", "roleplay"],
+        "description": "The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!",
+        "url": "https://raw.githubusercontent.com/esx-framework/ESX-recipes/legacy/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "QBCore Framework",
+        "tags": ["fivem", "roleplay"],
+        "description": "An advanced FiveM RP framework including jobs, gangs, housing & more!",
+        "url": "https://raw.githubusercontent.com/qbcore-framework/txAdminRecipe/main/qbcore.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "ND Core",
+        "tags": ["fivem", "roleplay"],
+        "description": "The official recipe for a base ND Core installation",
+        "url": "https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/recipe.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "CFX Default RedM",
+        "tags": ["redm"],
+        "description": "Just the base resources required to run a RedM server.",
+        "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe_redm.yaml"
+    },
+    {
+        "engine": 3,
+        "name": "VORP Core",
+        "tags": ["redm", "roleplay"],
+        "description": "VORP is the leading RP Framework for RedM containing various jobs, stables, hunting, housing & more!",
+        "url": "https://raw.githubusercontent.com/VORPCORE/VORP_txAdmin/main/vorp_recipe.yaml"
+    }
+]
