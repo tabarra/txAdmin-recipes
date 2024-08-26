@@ -34,6 +34,8 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
     - The txAdmin menu Heal command should also revive the player (eg from [esx_ambulancejob](https://github.com/esx-framework/esx_ambulancejob/blob/9ff01a716e29fffdf3913b15cd554c912a257aa3/server/main.lua#L46));
     - If you need any help or need any kind of integration, open an issue or contact the txAdmin Maintainer;
 - Your recipe must not violate or facilitate violation of any license or copyright, so it should only contain resources that are open source (eg GPLv3/MIT/Apache) or sharable (eg Creative Commons). Please make sure it does not contain any leaked content. Although it is hard to find a scenario where a recipe could _directly_ violate any license, this is a headache that we must try to avoid;
+- When available, use `system_resources` versions of resources from the now-arquived `cfx-server-data` (eg the chat resource);
+- Set the game build to the same in the CFX Default recipes;
 
 ****
 <p align="center">
