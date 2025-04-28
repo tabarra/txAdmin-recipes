@@ -15,6 +15,13 @@
     },
     {
         "engine": 3,
+        "name": "Qbox Framework",
+        "tags": ["fivem", "roleplay"],
+        "description": "The most modern and optimized framework, while compatible with QBCore resources.",
+        "url": "https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/refs/heads/main/qbox.yaml"
+    },
+    {
+        "engine": 3,
         "name": "QBCore Framework",
         "tags": ["fivem", "roleplay"],
         "description": "An advanced FiveM RP framework including jobs, gangs, housing & more!",

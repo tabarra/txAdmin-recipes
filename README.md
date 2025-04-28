@@ -4,8 +4,9 @@ Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmi
 
 ## Popular recipes:
 - [CFX Default](https://github.com/tabarra/CFX-Default-recipe)
-- [QBCore Framework](https://github.com/qbcore-framework/txAdminRecipe)
 - [ESX Legacy](https://github.com/esx-framework/ESX-recipes)
+- [QBCore Framework](https://github.com/qbcore-framework/txAdminRecipe)
+- [Qbox Framework](https://github.com/Qbox-project/txAdminRecipe)
 - [VORP Core](https://github.com/VORPCORE/VORP_txAdmin)
 - [ZAP-Hosting ESX Pack](https://github.com/zap-fivem/esx_12_recipe) (deprecated)
 - [PlumeESX Legacy](https://github.com/tabarra/PlumeESX-recipe) (deprecated)
