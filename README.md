@@ -1,15 +1,16 @@
 # txAdmin-recipes 
-This repository is the index for the popular txAdmin's Server Deployer Recipes!
-Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md)** if you wanna know more.
+This repository is the index for the list of "Popular Recipes" (aka server templates) shown in the txAdmin setup page, as well as the files for the "Basic Server" recipes.  
+Please check the **[Recipe Documentation Page](https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md)** if you want to know more.
 
 ## Popular recipes:
-- [CFX Default](https://github.com/tabarra/CFX-Default-recipe)
+- [FiveM Basic Server](./default-fivem/)
+- [RedM Basic Server](./default-redm/)
 - [ESX Legacy](https://github.com/esx-framework/ESX-recipes)
-- [QBCore Framework](https://github.com/qbcore-framework/txAdminRecipe)
 - [Qbox Framework](https://github.com/Qbox-project/txAdminRecipe)
+- [QBCore Framework](https://github.com/qbcore-framework/txAdminRecipe)
 - [VORP Core](https://github.com/VORPCORE/VORP_txAdmin)
-- [ZAP-Hosting ESX Pack](https://github.com/zap-fivem/esx_12_recipe) (deprecated)
-- [PlumeESX Legacy](https://github.com/tabarra/PlumeESX-recipe) (deprecated)
+- [~~ZAP-Hosting ESX Pack~~](https://github.com/zap-fivem/esx_12_recipe) (deprecated)
+- [~~PlumeESX Legacy~~](https://github.com/tabarra/PlumeESX-recipe) (deprecated)
 
 ## Recipe-making Guidelines and Best Practices:
 - Always start your recipe based on the CFX Default recipe. Copy the structure from server.cfg, resources folder, and recipe YAML;

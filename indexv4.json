@@ -1,10 +1,10 @@
 [
     {
         "engine": 3,
-        "name": "CFX Default FiveM",
+        "name": "FiveM Basic Server (CFX Default)",
         "tags": ["fivem"],
-        "description": "Just the base resources required to run a FiveM server.",
-        "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml"
+        "description": "A minimal server, without framework, with just the config required to run a FiveM server.",
+        "url": "https://raw.githubusercontent.com/citizenfx/txAdmin-recipes/refs/heads/main/default-fivem/recipe.yaml"
     },
     {
         "engine": 3,
@@ -15,24 +15,24 @@
     },
     {
         "engine": 3,
-        "name": "Qbox Framework",
+        "name": "Qbox",
         "tags": ["fivem", "roleplay"],
         "description": "The most modern and optimized framework, while compatible with QBCore resources.",
         "url": "https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/refs/heads/main/qbox.yaml"
     },
     {
         "engine": 3,
-        "name": "QBCore Framework",
+        "name": "QBCore",
         "tags": ["fivem", "roleplay"],
         "description": "An advanced FiveM RP framework including jobs, gangs, housing & more!",
         "url": "https://raw.githubusercontent.com/qbcore-framework/txAdminRecipe/main/qbcore.yaml"
     },
     {
         "engine": 3,
-        "name": "CFX Default RedM",
+        "name": "RedM Basic Server (CFX Default)",
         "tags": ["redm"],
-        "description": "Just the base resources required to run a RedM server.",
-        "url": "https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe_redm.yaml"
+        "description": "A minimal server, without framework, with just the config required to run a RedM server.",
+        "url": "https://raw.githubusercontent.com/citizenfx/txAdmin-recipes/refs/heads/main/default-redm/recipe.yaml"
     },
     {
         "engine": 3,

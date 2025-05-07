@@ -1,0 +1,21 @@
+$engine: 3
+$onesync: on
+name: FiveM Basic Server
+description: Recipe for the base resources required to run a minimal FiveM server.
+
+tasks: 
+  # Download default resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources
+
+  # Remove the old chat resource
+  - action: remove_path
+    path: ./resources/[gameplay]/chat
+
+  # Download default server.cfg for FiveM
+  - action: download_file
+    url: https://raw.githubusercontent.com/citizenfx/txAdmin-recipes/refs/heads/main/default-fivem/server.cfg
+    path: ./server.cfg
